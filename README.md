@@ -23,8 +23,18 @@ conda env create -f environment.yml
 To train and evaluate the model(s) in the paper, run this command:
 
 ```train
-python train.py --config config/cifar10.json
+python train.py --config config/cifar10.json 
+python train.py --config config/cifar10.json "training_params:epsilon=0.007843" "training_params:train_epsilon=0.007843" 
 python train.py --config config/mnist.json
+python train.py --config config/svhn.json
+
+
+python eval.py --config config/cifar10.json "eval_params:model_paths=cifar_medium_8px"
+python eval.py --config config/cifar10.json "eval_params:model_paths=cifar_medium_2px" "eval_params:epsilon=0.007843"
+python eval.py --config config/mnist.json "eval_params:model_paths=mnist_large_train04"
+python eval.py --config config/svhn.json "eval_params:model_paths=svhn_large_001"
+
+
 ```
 
 <!----
@@ -35,10 +45,10 @@ python train.py --config config/mnist.json
 ## Pre-trained Models
 
 You can download pretrained models here:
-
-- [OUR model](https://drive.google.com/file/d/17MsumEnGQvpMQaXMXRZK4xK8mpnO0oRz/view?usp=sharing) trained on MNIST.
-- [OUR model](https://drive.google.com/file/d/1MuXNJ63_HwzKtBMrRlvrLGIzD3FhH-Ov/view?usp=sharing) trained on CIFAR-10.
-
+<!----
+ - [OUR model](https://drive.google.com/file/d/) trained on MNIST.
+ - [OUR model](https://drive.google.com/file/d/) trained on CIFAR-10.
+---->
 
 <!----
 > 📋Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
@@ -50,8 +60,8 @@ After downloading the pretrained models to the directory ./pretrained, you are r
 To evaluate the pretrained model, run:
 
 ```eval
-python evaluation_mnist.py --test_pth pretrained/mnist_save.pth
-python evaluation_cifar10.py --test_pth pretrained/cifar10_save.pth
+python eval.py --config config/mnist.json "eval_params:model_paths=mnist_large_train04" "eval_params:epsilon=0.3"
+python eval.py --config config/cifar10.json "eval_params:model_paths=cifar_medium_2px" "eval_params:epsilon=0.007843"
 ```
 
 <!----
