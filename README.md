@@ -2,6 +2,7 @@
 
 This repository is the official implementation of "Loss Landscape Matters: Training Certifiably Robust Models with Favorable Loss Landscape".
 
+![Illustration](./media/fig.pdf)
 <!----
 > 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 ---->
