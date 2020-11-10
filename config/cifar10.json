@@ -1,0 +1,58 @@
+{
+    "model_def": "model_defs.py",
+    "dataset": "cifar",
+    "models_path": "./log/",
+    "training_params": {
+        "method": "robust_natural",
+        "epochs": 400,
+        "lr": 0.0003,
+        "weight_decay": 0.0,
+        "optimizer": "adam",
+        "starting_epsilon": 0.0,
+        "epsilon": 0.0313725,
+        "train_epsilon": 0.0313725,
+        "schedule_start": 20,
+        "schedule_length":241,
+        "norm": "inf",
+        "verbose": 200,
+        "loader_params": {"batch_size": 128, "test_batch_size": 128, "shuffle_train": true, "train_random_transform": true, "normalize_input": false},
+        "method_params": {"bounded_input": false, "bound_type": "crown-interval", "final-beta": 1.0, "final-kappa": 0.0,"bound_opts":{"same-slope": false, "zero-lb": false, "one-lb": false,"binary":false,"ours":true,"uniform":false}},
+        "n_loss":10,
+        "cal_loss":true,
+        "max_loss": 5,
+        "min_loss": 0.5,
+        "cal_grad":true,
+        "name":"",
+        "cal_grad_norm":true, 
+        "bound_eval":false, 
+        "frozen_dict": {"10":13, "20":12, "30":11,"40":10, "50":9, "60":8,"70":7, "80":6, "90":5,"100":4, "110":3, "120":2, "130":1, "140":0},
+        "save":false
+    },
+        
+    "attack_params": {
+        "batch_size": 128,
+        "eps_start": 0.0,
+        "eps_end": 0.0313725,
+        "eps_step": 9
+    },
+    "eval_params": {
+        "method": "robust_natural",
+        "epsilon": 0.0313725,
+        "norm": "inf",
+        "verbose": false,
+        "loader_params": {"batch_size": 128, "test_batch_size": 128, "shuffle_train": true, "normalize_input": false},
+        "method_params": {"bounded_input": false, "bound_type": "crown-interval", "final-beta": 1.0, "final-kappa": 0.0,"bound_opts":{"same-slope": false, "zero-lb": false, "one-lb": false,"binary":false,"ours":true,"uniform":false}},
+        "model_paths":"",
+        "bound_eval":false,
+        "violin_plot":false   
+    },
+    "models": [
+        {
+            "model_id": "cnn_4layer_linear_512_width_8",
+            "model_class": "model_cnn_4layer",
+            "model_params": {"in_ch": 3, "in_dim": 32, "width": 8, "linear_size": 512}
+            
+        }
+    ]
+}
+

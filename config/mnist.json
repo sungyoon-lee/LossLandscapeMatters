@@ -1,0 +1,61 @@
+{
+    "model_def": "model_defs.py",
+    "dataset": "mnist",
+    "models_path": "./log/",
+    "training_params": {
+      "method": "robust_natural",
+        "epochs": 200,
+        "lr": 5e-4,
+        "weight_decay": 0.0,
+        "optimizer": "adam",
+        "schedule_start": 10,
+        "starting_epsilon": 0.0,
+        "epsilon": 0.4,
+        "train_epsilon": 0.4,
+        "schedule_length":50,
+        "norm": "inf",
+        "lr_decay_step": 0,
+        "lr_decay_factor": 0.1,
+        "lr_decay_milestones": [130,190],
+        
+        "verbose": false,
+        "loader_params": {"batch_size": 80, "test_batch_size": 80, "shuffle_train": true},
+        "method_params": {"bounded_input": false, "bound_type": "crown-interval", "final-beta": 1.0, "final-kappa": 0.0,"bound_opts":{"same-slope": false, "zero-lb": false, "one-lb": false,"binary":false,"ours":true,"uniform":false}},
+        "n_loss":10,
+        "cal_loss":true,
+        "max_loss": 5,
+        "min_loss": 0.5,
+        "cal_grad":true,
+        "name":"",
+        "cal_grad_norm":true, 
+        "bound_eval":false, 
+        "frozen_dict": {"10":13, "20":12, "30":11,"40":10, "50":9, "60":8,"70":7, "80":6, "90":5,"100":4, "110":3, "120":2, "130":1, "140":0},
+        "save":false
+    },
+        
+    "attack_params": {
+        "batch_size": 128,
+        "eps_start": 0.0,
+        "eps_end": 0.4,
+        "eps_step": 9
+    },
+    "eval_params": {
+        "method": "robust_natural",
+        "epsilon": 0.4,
+        "norm": "inf",
+        "verbose": false,
+        "loader_params": {"batch_size": 80, "test_batch_size": 80, "shuffle_train": true, "normalize_input": false},
+        "method_params": {"bounded_input": false, "bound_type": "crown-interval", "final-beta": 1.0, "final-kappa": 0.0,"bound_opts":{"same-slope": false, "zero-lb": false, "one-lb": false,"binary":false,"ours":true,"uniform":false}},
+        "model_paths":"",
+        "bound_eval":false,
+        "violin_plot":false   
+    },
+    "models": [
+        {
+            "model_id": "IBP_large",
+            "model_class": "IBP_large",
+            "model_params": {"in_ch": 1, "in_dim": 28, "linear_size": 512}
+        }
+    ]
+}
+
