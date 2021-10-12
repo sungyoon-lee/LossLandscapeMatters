@@ -4,6 +4,8 @@ This repository is the official implementation of "Towards Better Understanding 
 
 This repository is modified from the CROWN-IBP repository (https://github.com/huanzhang12/CROWN-IBP).
 
+![Figure](./media/fig.png)
+
 <!----
 > 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 ---->
