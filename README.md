@@ -1,8 +1,9 @@
-# Loss Landscape Matters: Training Certifiably Robust Models with Favorable Loss Landscape
+# Towards Better Understanding of Training Certifiably Robust Models against Adversarial Examples
 
-This repository is the official implementation of "Loss Landscape Matters: Training Certifiably Robust Models with Favorable Loss Landscape".
+This repository is the official implementation of "Towards Better Understanding of Training Certifiably Robust Models against Adversarial Examples".
 
-![Illustration](./media/fig.png)
+This repository is modified from the CROWN-IBP repository (https://github.com/huanzhang12/CROWN-IBP).
+
 <!----
 > 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 ---->
