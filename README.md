@@ -6,6 +6,8 @@ This repository is modified from the CROWN-IBP repository (https://github.com/hu
 
 ![Figure](./media/fig.png)
 
+IBP starts with a higher loss but ends with a relatively lower loss (error), demonstrating smaller loss variations. Our method uses tight bounds like CROWN-IBP, while its landscape is as favorable as IBP, achieving the best performance among these four methods.
+
 <!----
 > 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 ---->
